@@ -45,25 +45,34 @@ export default class AccountForm extends React.Component {
 	};
 	render() {
 		return (
-			<form onSubmit={this.saveAccount}>
-				{this.state.error && <p>{this.state.error}</p>}
-				<input type="text" placeholder="Name of account" value={this.state.name} onChange={this.onNameChange} />
-				<input
-					type="text"
-					placeholder="Initial amount"
-					value={this.state.amount}
-					onChange={this.onAmountChange}
-				/>
-				<select placeholder="Type" value={this.state.type} onChange={this.onTypeChange}>
-					<option value="bank">Bank</option>
-					<option value="cash">Cash</option>
-				</select>
-				<select placeholder="Currency" value={this.state.currency} onChange={this.onCurrencyChange}>
-					<option value="euro">Euro</option>
-					<option value="dollar">Dollar</option>
-				</select>
-				<button>Save account</button>
-			</form>
+			<div>
+				<div className="content-container">
+					<form onSubmit={this.saveAccount}>
+						{this.state.error && <p>{this.state.error}</p>}
+						<input
+							type="text"
+							placeholder="Name of account"
+							value={this.state.name}
+							onChange={this.onNameChange}
+						/>
+						<input
+							type="text"
+							placeholder="Initial amount"
+							value={this.state.amount}
+							onChange={this.onAmountChange}
+						/>
+						<select placeholder="Type" value={this.state.type} onChange={this.onTypeChange}>
+							<option value="bank">Bank</option>
+							<option value="cash">Cash</option>
+						</select>
+						<select placeholder="Currency" value={this.state.currency} onChange={this.onCurrencyChange}>
+							<option value="euro">Euro</option>
+							<option value="dollar">Dollar</option>
+						</select>
+						<button>Save account</button>
+					</form>
+				</div>
+			</div>
 		);
 	}
 }

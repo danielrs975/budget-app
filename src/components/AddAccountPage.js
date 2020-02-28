@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import AccountForm from './AccountForm';
 import { startAddAccount } from '../actions/accounts';
 
-class AddAccountPage extends React.Component {
+export class AddAccountPage extends React.Component {
 	onSubmit = (account) => {
 		this.props.startAddAccount(account);
 		this.props.history.push('/dashboard');
@@ -11,8 +11,10 @@ class AddAccountPage extends React.Component {
 	render() {
 		return (
 			<div>
-				<h1>Add a new account</h1>
-				<AccountForm onSubmit={this.onSubmit} />
+				<div className="content-container">
+					<h1>Add a new account</h1>
+					<AccountForm onSubmit={this.onSubmit} />
+				</div>
 			</div>
 		);
 	}

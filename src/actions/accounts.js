@@ -15,7 +15,26 @@ export const addAccount = (account) => ({
 });
 
 export const startAddAccount = (account) => {
-	return (dispatch) => {
+	return (dispatch, getState) => {
 		dispatch(addAccount({ id: uuid(), ...account }));
+		const accounts = getState().accounts;
+		localStorage.setItem('accounts', JSON.stringify(accounts));
+	};
+};
+
+/**
+ * This action is set in the state the accounts that are saved
+ * in the db
+ * @param {*} accounts The accounts to set in the state
+ */
+export const setAccount = (accounts) => ({
+	type     : 'SET_ACCOUNTS',
+	accounts
+});
+
+export const startSetAccount = () => {
+	return (dispatch) => {
+		const accounts = JSON.parse(localStorage.getItem('accounts'));
+		dispatch(setAccount(accounts || []));
 	};
 };
