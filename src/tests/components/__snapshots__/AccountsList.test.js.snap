@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AccountsList correctly 1`] = `
+<div>
+  <AccountCard
+    amount={1000}
+    key="1"
+    name="Revolut"
+  />
+  <AccountCard
+    amount={1500}
+    key="2"
+    name="Societe Generale"
+  />
+  <AccountCard
+    amount={5400}
+    key="3"
+    name="Cash"
+  />
+  <[object Object]
+    to="account/create"
+  >
+    Add Account
+  </[object Object]>
+</div>
+`;

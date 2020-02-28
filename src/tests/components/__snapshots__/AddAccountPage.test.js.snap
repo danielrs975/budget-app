@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AddAccountPage correctly 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <h1>
+      Add a new account
+    </h1>
+    <AccountForm
+      onSubmit={[Function]}
+    />
+  </div>
+</div>
+`;

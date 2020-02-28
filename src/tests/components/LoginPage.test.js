@@ -13,6 +13,6 @@ test('should render LoginPage correclty', () => {
 });
 
 test('should call startLogin on button click', () => {
-	wrapper.find('button').simulate('click');
+	wrapper.find('button').at(1).simulate('click');
 	expect(startLogin).toHaveBeenCalled();
 });

@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AccountForm correctly 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <input
+        onChange={[Function]}
+        placeholder="Name of account"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Initial amount"
+        type="text"
+        value=""
+      />
+      <select
+        onChange={[Function]}
+        placeholder="Type"
+        value="bank"
+      >
+        <option
+          value="bank"
+        >
+          Bank
+        </option>
+        <option
+          value="cash"
+        >
+          Cash
+        </option>
+      </select>
+      <select
+        onChange={[Function]}
+        placeholder="Currency"
+        value="euro"
+      >
+        <option
+          value="euro"
+        >
+          Euro
+        </option>
+        <option
+          value="dollar"
+        >
+          Dollar
+        </option>
+      </select>
+      <button>
+        Save account
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`should render AccountForm with errors correctly 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <p>
+        A name for the account must be provided
+      </p>
+      <input
+        onChange={[Function]}
+        placeholder="Name of account"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Initial amount"
+        type="text"
+        value=""
+      />
+      <select
+        onChange={[Function]}
+        placeholder="Type"
+        value="bank"
+      >
+        <option
+          value="bank"
+        >
+          Bank
+        </option>
+        <option
+          value="cash"
+        >
+          Cash
+        </option>
+      </select>
+      <select
+        onChange={[Function]}
+        placeholder="Currency"
+        value="euro"
+      >
+        <option
+          value="euro"
+        >
+          Euro
+        </option>
+        <option
+          value="dollar"
+        >
+          Dollar
+        </option>
+      </select>
+      <button>
+        Save account
+      </button>
+    </form>
+  </div>
+</div>
+`;

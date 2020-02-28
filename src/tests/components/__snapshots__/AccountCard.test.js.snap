@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AccountCard correctly 1`] = `
+<div
+  className="card-layout"
+>
+  <h3 />
+  <p>
+    NaN
+  </p>
+</div>
+`;

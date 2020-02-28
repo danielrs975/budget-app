@@ -10,10 +10,26 @@ exports[`should render LoginPage correclty 1`] = `
     <h1
       className="box-layout__title"
     >
-      Boilerplate
+      Budget App
     </h1>
     <p>
-      Tag line for app.
+      Manage your expenses everywhere
+    </p>
+    <input
+      placeholder="E-mail"
+      type="text"
+    />
+    <input
+      placeholder="Password"
+      type="password"
+    />
+    <button
+      className="button"
+    >
+      Login
+    </button>
+    <p>
+      or
     </p>
     <button
       className="button"
