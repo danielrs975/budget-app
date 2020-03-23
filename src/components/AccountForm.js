@@ -3,11 +3,20 @@ import React from 'react';
 export default class AccountForm extends React.Component {
 	constructor(props) {
 		super(props);
+		const { account } = props;
 		this.state = {
-			name     : '',
-			amount   : '',
-			type     : 'bank',
-			currency : 'euro',
+			name     :
+				account ? account.name :
+				'',
+			amount   :
+				account ? account.amount :
+				'',
+			type     :
+				account ? account.type :
+				'bank',
+			currency :
+				account ? account.currency :
+				'euro',
 			error    : undefined
 		};
 	}
