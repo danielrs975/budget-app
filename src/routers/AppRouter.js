@@ -6,7 +6,7 @@ import NotFoundPage from '../components/NotFoundPage';
 import LoginPage from '../components/LoginPage';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRouter';
-import AddAccountPage from '../components/AddAccountPage';
+import AddAccountPage from '../components/account/AddAccountPage';
 
 export const history = createHistory();
 

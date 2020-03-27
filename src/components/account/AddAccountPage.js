@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import AccountForm from './AccountForm';
-import { startAddAccount } from '../actions/accounts';
+import { startAddAccount } from '../../actions/accounts';
 
 export class AddAccountPage extends React.Component {
 	onSubmit = (account) => {

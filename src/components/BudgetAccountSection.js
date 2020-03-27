@@ -6,7 +6,7 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
-import AccountsList from './AccountsList';
+import AccountsList from './account/AccountsList';
 
 const BudgetAccountSection = (props) => (
 	<div className="content-container">
