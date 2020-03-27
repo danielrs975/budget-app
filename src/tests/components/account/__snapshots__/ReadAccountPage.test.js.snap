@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ReadAccountPage correctly 1`] = `
+<div>
+  <div
+    className="page-header"
+  >
+    <div
+      className="content-container"
+    >
+      <h1>
+        Revolut
+      </h1>
+    </div>
+  </div>
+  <div
+    className="content-container"
+  >
+    <p>
+      Remaining Amount: 
+      10
+    </p>
+  </div>
+</div>
+`;

@@ -8,7 +8,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import AccountsList from './account/AccountsList';
 
-const BudgetAccountSection = (props) => (
+export const BudgetAccountSection = (props) => (
 	<div className="content-container">
 		<div>
 			<h1>Accounts</h1>

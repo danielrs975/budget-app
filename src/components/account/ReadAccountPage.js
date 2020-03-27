@@ -6,7 +6,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const ReadAccountPage = ({ account }) => {
+export const ReadAccountPage = ({ account }) => {
     return (
         <div>
             <div className="page-header">
