@@ -4,7 +4,11 @@ exports[`should render AccountCard correctly 1`] = `
 <div
   className="card-layout"
 >
-  <h3 />
+  <[object Object]
+    to="account/undefined"
+  >
+    <h3 />
+  </[object Object]>
   <p>
     NaN
   </p>
