@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render TransactionForm correctly 1`] = `
+<div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Type: 
+      </label>
+      <select
+        onChange={[Function]}
+        value="purchase"
+      >
+        <option
+          value="purchase"
+        >
+          Purchase
+        </option>
+        <option
+          value="transfer"
+        >
+          Transfer
+        </option>
+      </select>
+      <input
+        onChange={[Function]}
+        placeholder="Description"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Date"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Amount"
+        type="text"
+        value=""
+      />
+      <button>
+        Save transaction
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`should render TransactionForm with transfer type transaction 1`] = `
+<div>
+  <div>
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Type: 
+      </label>
+      <select
+        onChange={[Function]}
+        value="transfer"
+      >
+        <option
+          value="purchase"
+        >
+          Purchase
+        </option>
+        <option
+          value="transfer"
+        >
+          Transfer
+        </option>
+      </select>
+      <input
+        onChange={[Function]}
+        placeholder="Description"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Date"
+        type="text"
+        value=""
+      />
+      <div>
+        <label>
+          From: 
+        </label>
+        <select
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value="accountIid"
+          >
+            Account I
+          </option>
+          <option
+            value="accountIIid"
+          >
+            Account II
+          </option>
+        </select>
+        <label>
+          To: 
+        </label>
+        <select
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value="accountIid"
+          >
+            Account I
+          </option>
+          <option
+            value="accountIIid"
+          >
+            Account II
+          </option>
+        </select>
+      </div>
+      <input
+        onChange={[Function]}
+        placeholder="Amount"
+        type="text"
+        value=""
+      />
+      <button>
+        Save transaction
+      </button>
+    </form>
+  </div>
+</div>
+`;
