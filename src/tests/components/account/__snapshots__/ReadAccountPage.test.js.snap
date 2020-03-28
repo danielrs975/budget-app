@@ -20,6 +20,11 @@ exports[`should render ReadAccountPage correctly 1`] = `
       Remaining Amount: 
       10
     </p>
+    <[object Object]
+      to="/transaction/create"
+    >
+      Add a Transaction
+    </[object Object]>
   </div>
 </div>
 `;

@@ -8,6 +8,7 @@ import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRouter';
 import AddAccountPage from '../components/account/AddAccountPage';
 import ReadAccountPage from '../components/account/ReadAccountPage';
+import AddTransactionPage from '../components/transaction/AddTransactionPage';
 
 export const history = createHistory();
 
@@ -19,6 +20,7 @@ const AppRouter = () => (
 				<PrivateRoute path="/dashboard" component={DashboardPage} exact={true} />
 				<PrivateRoute path="/account/create" component={AddAccountPage} exact={true} />
 				<PrivateRoute path="/account/:id" component={ReadAccountPage} />
+				<PrivateRoute path="/transaction/create" component={AddTransactionPage} />
 				<Route component={NotFoundPage} />
 			</Switch>
 		</div>

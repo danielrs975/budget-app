@@ -5,6 +5,7 @@
  */
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export const ReadAccountPage = ({ account }) => {
     return (
@@ -16,6 +17,7 @@ export const ReadAccountPage = ({ account }) => {
             </div>
             <div className="content-container">
                 <p>Remaining Amount: {account.amount / 100}</p>
+                <Link to="/transaction/create">Add a Transaction</Link>
             </div>
         </div>
     );
