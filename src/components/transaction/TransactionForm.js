@@ -60,33 +60,59 @@ export class TransactionForm extends React.Component {
     //--------------------------------------------------------------------
 
     /**
+     * Function to validate all the fields of the
+     * form, for now only works with required fields
+     */
+    validateFields = () => {
+        const errors = {};
+        if (!this.state.amount) {
+            errors['amount'] = 'The amount field is required';
+        }
+
+        if (!this.state.date) {
+            errors['date'] = 'The date field is required';
+        }
+        
+        if (this.state.typeOfTransaction === 'transfer') {
+            if (!this.state.from) {
+                errors['from'] = 'The from account is required';
+            }
+            if (!this.state.to) {
+                errors['to'] = 'The to account is required';
+            }
+        }
+        return errors;
+    }
+
+    /**
      * Handler of the submit
      * event
      */
     saveTransaction = (e) => {
         e.preventDefault();
-
-        // Check for errors:
-        //      - Amount is required
-        //      - Date is required
-        //      - In case of transfer: from and to are required
-
-        let formValues = {
-            typeOfTransaction: this.state.typeOfTransaction,
-            description: this.state.description,
-            date: this.state.date,
-            amount: this.state.amount
-        };
-        if (this.state.typeOfTransaction === 'transfer') {
-            formValues = {
-                ...formValues,
-                from: this.state.from,
-                to: this.state.to
+        const errors = this.validateFields();
+        const hasErrors = Object.keys(errors).length > 0
+        if (!hasErrors) {
+            this.setState(() => ({ errors }))
+            let formValues = {
+                typeOfTransaction: this.state.typeOfTransaction,
+                description: this.state.description,
+                date: this.state.date,
+                amount: this.state.amount
+            };
+            if (this.state.typeOfTransaction === 'transfer') {
+                formValues = {
+                    ...formValues,
+                    from: this.state.from,
+                    to: this.state.to
+                }
             }
+    
+            // After we send the information to redux
+            console.log(formValues);
+        } else {
+            this.setState(() => ({ errors }));
         }
-
-        // After we send the information to redux
-        console.log(formValues);
     }
 
     constructor(props) {
@@ -98,6 +124,7 @@ export class TransactionForm extends React.Component {
             from: '',
             to: '',
             amount: '',
+            errors: {}
         };
     }
     
@@ -123,6 +150,7 @@ export class TransactionForm extends React.Component {
                             value={this.state.date}
                             onChange={this.onDateChange}
                         />
+                        { this.state.errors.date && <span>{this.state.errors.date}</span> }
                         {/* This form is in case of transfer */}
                         { 
                             this.state.typeOfTransaction === 'transfer' 
@@ -133,11 +161,13 @@ export class TransactionForm extends React.Component {
                                     <option value="accountIid">Account I</option>
                                     <option value="accountIIid">Account II</option>
                                 </select>
+                                { this.state.errors.from && <span>{this.state.errors.from}</span> }
                                 <label>To: </label>
                                 <select value={this.state.to} onChange={this.onToChange}>
                                     <option value="accountIid">Account I</option>
                                     <option value="accountIIid">Account II</option>
                                 </select>
+                                { this.state.errors.to && <span>{this.state.errors.to}</span> }
                             </div>
                         }
                         <input 
@@ -146,6 +176,7 @@ export class TransactionForm extends React.Component {
                             value={this.state.amount}
                             onChange={this.onAmountChange}
                         />
+                        { this.state.errors.amount && <span>{this.state.errors.amount}</span> }
                         <button>Save transaction</button>
                     </form>
                 </div>
