@@ -6,6 +6,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import TransactionsTable from '../transaction/TransactionsTable';
 
 export const ReadAccountPage = ({ account }) => {
     return (
@@ -19,6 +20,7 @@ export const ReadAccountPage = ({ account }) => {
                 <p>Remaining Amount: {account.amount / 100}</p>
                 <Link to="/transaction/create">Add a Transaction</Link>
             </div>
+            <TransactionsTable />
         </div>
     );
 }

@@ -26,5 +26,6 @@ exports[`should render ReadAccountPage correctly 1`] = `
       Add a Transaction
     </[object Object]>
   </div>
+  <TransactionsTable />
 </div>
 `;
