@@ -55,6 +55,13 @@ describe('Form when transfer type is selected', () => {
             target: { value }
         });
         expect(wrapper.state('to')).toBe(value);
+    });
+
+    test('should show errors in case of from and to account are empty', () => {
+        wrapper.find('form').simulate('submit', {
+            preventDefault: jest.fn()
+        });
+        expect(wrapper).toMatchSnapshot();
     })
 })
 
@@ -74,6 +81,13 @@ test('should set date on input change', () => {
     });
     expect(wrapper.state('date')).toBe(value);
 });
+
+test('should show errors in case of date and amount empty', () => {
+    wrapper.find('form').simulate('submit', {
+        preventDefault: jest.fn()
+    });
+    expect(wrapper).toMatchSnapshot();
+})
 
 test('should set amount on input change', () => {
     const value = '22.1';

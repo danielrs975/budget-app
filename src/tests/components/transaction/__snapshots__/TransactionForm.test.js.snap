@@ -1,5 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Form when transfer type is selected should show errors in case of from and to account are empty 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Type: 
+      </label>
+      <select
+        onChange={[Function]}
+        value="transfer"
+      >
+        <option
+          value="purchase"
+        >
+          Purchase
+        </option>
+        <option
+          value="transfer"
+        >
+          Transfer
+        </option>
+      </select>
+      <input
+        onChange={[Function]}
+        placeholder="Description"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Date"
+        type="text"
+        value=""
+      />
+      <span>
+        The date field is required
+      </span>
+      <div>
+        <label>
+          From: 
+        </label>
+        <select
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value="accountIid"
+          >
+            Account I
+          </option>
+          <option
+            value="accountIIid"
+          >
+            Account II
+          </option>
+        </select>
+        <span>
+          The from account is required
+        </span>
+        <label>
+          To: 
+        </label>
+        <select
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value="accountIid"
+          >
+            Account I
+          </option>
+          <option
+            value="accountIIid"
+          >
+            Account II
+          </option>
+        </select>
+        <span>
+          The to account is required
+        </span>
+      </div>
+      <input
+        onChange={[Function]}
+        placeholder="Amount"
+        type="text"
+        value=""
+      />
+      <span>
+        The amount field is required
+      </span>
+      <button>
+        Save transaction
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`should render TransactionForm correctly 1`] = `
 <div>
   <div
@@ -134,6 +236,64 @@ exports[`should render TransactionForm with transfer type transaction 1`] = `
         type="text"
         value=""
       />
+      <button>
+        Save transaction
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
+exports[`should show errors in case of date and amount empty 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Type: 
+      </label>
+      <select
+        onChange={[Function]}
+        value="purchase"
+      >
+        <option
+          value="purchase"
+        >
+          Purchase
+        </option>
+        <option
+          value="transfer"
+        >
+          Transfer
+        </option>
+      </select>
+      <input
+        onChange={[Function]}
+        placeholder="Description"
+        type="text"
+        value=""
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Date"
+        type="text"
+        value=""
+      />
+      <span>
+        The date field is required
+      </span>
+      <input
+        onChange={[Function]}
+        placeholder="Amount"
+        type="text"
+        value=""
+      />
+      <span>
+        The amount field is required
+      </span>
       <button>
         Save transaction
       </button>
