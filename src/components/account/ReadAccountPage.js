@@ -12,8 +12,9 @@ export const ReadAccountPage = ({ account }) => {
     return (
         <div>
             <div className="page-header">
-                <div className="content-container">
+                <div className="content-container header__content">
                     <h1>{account.name}</h1>
+                    <button>Delete</button>
                 </div>
             </div>
             <div className="content-container">

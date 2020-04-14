@@ -6,11 +6,14 @@ exports[`should render ReadAccountPage correctly 1`] = `
     className="page-header"
   >
     <div
-      className="content-container"
+      className="content-container header__content"
     >
       <h1>
         Revolut
       </h1>
+      <button>
+        Delete
+      </button>
     </div>
   </div>
   <div
