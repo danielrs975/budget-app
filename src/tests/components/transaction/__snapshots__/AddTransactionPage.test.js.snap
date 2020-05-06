@@ -16,7 +16,9 @@ exports[`should render AddTransactionPage correctly 1`] = `
   <div
     className="content-container"
   >
-    <TransactionForm />
+    <TransactionForm
+      onSubmit={[Function]}
+    />
   </div>
 </div>
 `;

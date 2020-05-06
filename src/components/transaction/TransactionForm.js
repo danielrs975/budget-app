@@ -95,6 +95,8 @@ export class TransactionForm extends React.Component {
         if (!hasErrors) {
             this.setState(() => ({ errors }))
             let formValues = {
+                id: this.state.id,
+                accountId: this.state.accountId,
                 typeOfTransaction: this.state.typeOfTransaction,
                 description: this.state.description,
                 date: this.state.date,
@@ -109,7 +111,7 @@ export class TransactionForm extends React.Component {
             }
     
             // After we send the information to redux
-            console.log(formValues);
+            this.props.onSubmit(formValues);
         } else {
             this.setState(() => ({ errors }));
         }
@@ -117,15 +119,23 @@ export class TransactionForm extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            typeOfTransaction: 'purchase',
-            description: '',
-            date: '',
-            from: '',
-            to: '',
-            amount: '',
+        let propInfo = {
+            typeOfTransaction: this.props.transaction? this.props.transaction.typeOfTransaction: 'purchase',
+            description: this.props.transaction? this.props.transaction.description: '',
+            date: this.props.transaction? this.props.transaction.date: '',
+            amount: this.props.transaction? this.props.transaction.amount: '',
+            accountId: this.props.transaction? this.props.transaction.accountId: '',
+            id: this.props.transaction? this.props.transaction.id: '',
             errors: {}
         };
+        if (propInfo.typeOfTransaction === 'transfer') {
+            propInfo = {
+                ...propInfo,
+                from: this.props.from,
+                to: this.props.to
+            }  
+        };
+        this.state = propInfo;
     }
     
     render() {

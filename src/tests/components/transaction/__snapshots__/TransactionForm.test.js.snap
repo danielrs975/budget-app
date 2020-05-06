@@ -47,7 +47,6 @@ exports[`Form when transfer type is selected should show errors in case of from 
         </label>
         <select
           onChange={[Function]}
-          value=""
         >
           <option
             value="accountIid"
@@ -68,7 +67,6 @@ exports[`Form when transfer type is selected should show errors in case of from 
         </label>
         <select
           onChange={[Function]}
-          value=""
         >
           <option
             value="accountIid"
@@ -154,6 +152,58 @@ exports[`should render TransactionForm correctly 1`] = `
 </div>
 `;
 
+exports[`should render TransactionForm correctly with values, purchase type 1`] = `
+<div>
+  <div
+    className="content-container"
+  >
+    <form
+      onSubmit={[Function]}
+    >
+      <label>
+        Type: 
+      </label>
+      <select
+        onChange={[Function]}
+        value="purchase"
+      >
+        <option
+          value="purchase"
+        >
+          Purchase
+        </option>
+        <option
+          value="transfer"
+        >
+          Transfer
+        </option>
+      </select>
+      <input
+        onChange={[Function]}
+        placeholder="Description"
+        type="text"
+        value="bread"
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Date"
+        type="text"
+        value={"1970-01-01T00:00:00.000Z"}
+      />
+      <input
+        onChange={[Function]}
+        placeholder="Amount"
+        type="text"
+        value={12000}
+      />
+      <button>
+        Save transaction
+      </button>
+    </form>
+  </div>
+</div>
+`;
+
 exports[`should render TransactionForm with transfer type transaction 1`] = `
 <div>
   <div
@@ -198,7 +248,6 @@ exports[`should render TransactionForm with transfer type transaction 1`] = `
         </label>
         <select
           onChange={[Function]}
-          value=""
         >
           <option
             value="accountIid"
@@ -216,7 +265,6 @@ exports[`should render TransactionForm with transfer type transaction 1`] = `
         </label>
         <select
           onChange={[Function]}
-          value=""
         >
           <option
             value="accountIid"

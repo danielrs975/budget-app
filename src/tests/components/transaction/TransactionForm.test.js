@@ -5,15 +5,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { TransactionForm } from '../../../components/transaction/TransactionForm';
+import transactions from '../../fixtures/transactions';
 
-let wrapper;
+let wrapper, onSubmit;
 beforeEach(() => {
-    wrapper = shallow(<TransactionForm />);
+    onSubmit = jest.fn();
+    wrapper = shallow(<TransactionForm onSubmit={onSubmit} />);
 })
 
 test('should render TransactionForm correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
+
+test('should render TransactionForm correctly with values, purchase type', () => {
+    wrapper = shallow(<TransactionForm transaction={transactions[0]} />)
+    expect(wrapper).toMatchSnapshot();
+})
 
 test('should set type of transaction on select change', () => {
     const value = 'transfer';
@@ -95,4 +102,12 @@ test('should set amount on input change', () => {
         target: { value }
     });
     expect(wrapper.state('amount')).toBe(value);
+})
+
+test('should submit when the save transaction button is pressed', () => {
+    wrapper = shallow(<TransactionForm transaction={transactions[0]} onSubmit={onSubmit} />);
+    wrapper.find('form').simulate('submit', {
+        preventDefault: jest.fn()
+    });
+    expect(onSubmit).toHaveBeenLastCalledWith(transactions[0]);
 })

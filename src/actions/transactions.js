@@ -14,6 +14,14 @@ export const addTransaction = (transaction) => ({
     transaction,
 });
 
+export const startAddTransaction = (transaction) => {
+    return (dispatch, getState) => {
+        dispatch(addTransaction({ id: uuid(), ...transaction}));
+        const transactions = getState().transactions;
+        localStorage.setItem('transactions', JSON.stringify(transactions));
+    }
+}
+
 /**
  * The action to remove a transaction
  * @param {} id the id of the transaction to remove
